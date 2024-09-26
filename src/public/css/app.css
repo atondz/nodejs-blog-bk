@@ -1,0 +1,22 @@
+@charset "UTF-8";
+html, body {
+  height: 100%;
+  margin: 0; }
+
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  /* Đảm bảo container có chiều cao tối thiểu bằng chiều cao màn hình */ }
+
+main {
+  flex-grow: 1;
+  /* Đảm bảo phần main chiếm hết không gian còn lại */ }
+
+footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center; }
+
+.search-box {
+  width: 500px;
+  margin: 10px auto; }
