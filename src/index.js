@@ -7,6 +7,9 @@ const mongoose = require("mongoose"); // Thêm mongoose
 const app = express();
 const port = 3000;
 
+const route = require("./routes");
+
+
 // Kết nối tới MongoDB
 // const uri = "mongodb://localhost:27017/school";
 // mongoose
@@ -40,30 +43,9 @@ app.set('views', path.join(__dirname, 'resources/views'));
 
 
 // Route cho trang chủ
-app.get("/", (req, res) => {
-  const message = 'Chào mừng bạn đến với trang EJS!';
-  res.render('layouts/main', { title: 'Trang chủ', message: 'Chào mừng đến với website' });
-  console.log(req.query.q);
-});
-app.get("/users", (req, res) => {
-  const users = [
-      { name: "Nguyễn Văn A", age: 25, job: "Lập trình viên" },
-      { name: "Trần Thị B", age: 30, job: "Thiết kế đồ họa" },
-      { name: "Lê Văn C", age: 22, job: "Quản lý dự án" },
-      { name: "Phạm Thị D", age: 28, job: "Chuyên viên marketing" },
-      { name: "Nguyễn Văn E", age: 35, job: "Kỹ sư phần mềm" },
-      { name: "Trần Văn F", age: 27, job: "Nhà phát triển web" },
-      { name: "Lê Thị G", age: 29, job: "Giáo viên" },
-  ];
-  res.render("users", { title: "Danh sách người dùng", users });
-});
 
-app.get("/status", (req, res) => {
-  const isLoggedIn = true; // Giả sử người dùng đã đăng nhập
-  res.render("status", { title: "Trạng thái", isLoggedIn });
-});
+route(app);
 
--
 
 
 // Middleware để parse JSON
