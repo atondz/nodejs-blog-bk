@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông tin người dùng - {{user.name}}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .user-info img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .user-info table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .user-info table td, .user-info table th {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    .user-info table th {
+      background-color: #f4f4f9;
+    }
+    .user-info table td {
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Thông tin người dùng</h1>
+    <div class="user-info">
+      <!-- Hình ảnh người dùng -->
+      <img src="{{user.image}}" alt="{{user.name}}">
+
+      <!-- Thông tin người dùng -->
+      <table>
+        <tr>
+          <th>ID</th>
+          <td>{{user._id}}</td>
+        </tr>
+        <tr>
+          <th>Họ và tên</th>
+          <td>{{user.name}}</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+          <th>Điện thoại</th>
+          <td>{{user.phone}}</td>
+        </tr>
+        <tr>
+          <th>Địa chỉ</th>
+          <td>{{user.address}}</td>
+        </tr>
+        <tr>
+          <th>Vai trò</th>
+          <td>{{user.role}}</td>
+        </tr>
+        <tr>
+          <th>Giới tính</th>
+          <td>{{user.gender}}</td>
+        </tr>
+        <tr>
+          <th>Ngày sinh</th>
+          <td>{{user.dateOfBirth}}</td>
+        </tr>
+        <tr>
+          <th>Ngày tạo tài khoản</th>
+          <td>{{user.createdAt}}</td>
+        </tr>
+        <tr>
+          <th>Cập nhật lần cuối</th>
+          <td>{{user.updatedAt}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
